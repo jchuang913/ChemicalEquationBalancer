@@ -2,5 +2,5 @@
     <string name="app_name">Chemical Equation Balancer</string>
     <string name="equation">Unbalanced equation</string>
     <string name="balance">Balance</string>
-    <string name="balanced_equation">Balanced equation:</string>
+    <string name="balanced_equation">Coefficients in balanced equation:</string>
 </resources>
