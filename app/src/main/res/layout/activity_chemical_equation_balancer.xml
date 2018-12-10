@@ -7,13 +7,12 @@
     tools:context=".ChemicalEquationBalancer">
 
     <EditText
-        android:id="@+id/UnbalancedEquation"
+        android:id="@+id/unbalancedEquation"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="58dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="64dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="392dp"
+        android:layout_marginBottom="436dp"
         android:ems="10"
         android:hint="@string/equation"
         android:importantForAutofill="no"
@@ -23,13 +22,13 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/BalanceButton"
+        android:id="@+id/balanceButton"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="43dp"
         android:layout_marginStart="256dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="336dp"
@@ -38,12 +37,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UnbalancedEquation" />
+        app:layout_constraintTop_toBottomOf="@+id/unbalancedEquation" />
 
     <TextView
-        android:id="@+id/BalancedEquationHeader"
+        android:id="@+id/balancedEquationHeader"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="54dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="96dp"
         android:layout_marginEnd="24dp"
@@ -54,13 +53,15 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UnbalancedEquation" />
+        app:layout_constraintTop_toBottomOf="@+id/unbalancedEquation"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/BalancedEquation"
+        android:id="@+id/balancedEquation"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="257dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
@@ -72,7 +73,9 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BalancedEquationHeader" />
+        app:layout_constraintTop_toBottomOf="@+id/balancedEquationHeader"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
