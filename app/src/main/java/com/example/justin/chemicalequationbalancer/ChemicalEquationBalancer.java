@@ -62,7 +62,7 @@ public class ChemicalEquationBalancer extends AppCompatActivity {
         }
 
         ComplexMatrix matrix = new ComplexMatrix(mainarr);
-        matrix.reducedRowEchelonForm();
+        matrix = matrix.reducedRowEchelonForm();
 
         for (int y = 0; y < ylen; y++) {
             for (int x = 0; x < xlen; x++) {
