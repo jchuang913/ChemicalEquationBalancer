@@ -41,39 +41,42 @@ public class ChemicalEquationBalancer extends AppCompatActivity {
         String result = "";
         String string = valueOf(unbalancedEquation.getText());
 
-        String[] arr = string.split("\\), \\(");
-        arr[0] = arr[0].substring(1);
-        arr[arr.length - 1] = arr[arr.length - 1].substring(0, arr[arr.length - 1].length() - 1);
-        String[] findlen = arr[0].split(", ");
-        int xlen = findlen.length;
-        int ylen = arr.length;
-        double[][] mainarr = new double[xlen][ylen];
+        try {
+            String[] arr = string.split("\\), \\(");
+            arr[0] = arr[0].substring(1);
+            arr[arr.length - 1] = arr[arr.length - 1].substring(0, arr[arr.length - 1].length() - 1);
+            String[] findlen = arr[0].split(", ");
+            int xlen = findlen.length;
+            int ylen = arr.length;
+            double[][] mainarr = new double[xlen][ylen];
 
-        for (int i = 0; i < arr.length; i++) {
-            String[] subarr = arr[i].split(", ");
-            if (subarr.length != xlen) {
-                result = "Make the array rectangular";
-                balancedEquation.setText(result);
-                return;
-            }
-            for (int j = 0; j < xlen; j++) {
-                mainarr[i][j] = Double.parseDouble(subarr[j]);
-            }
-        }
-
-        ComplexMatrix matrix = new ComplexMatrix(mainarr);
-        matrix = matrix.reducedRowEchelonForm();
-
-        for (int y = 0; y < ylen; y++) {
-            for (int x = 0; x < xlen; x++) {
-                result += "" + matrix.getElementReference(x, y);
-                result = result.substring(0, result.length() - 7) + "    ";
-                if (x == xlen - 1) {
-                    result += "\n";
+            for (int i = 0; i < arr.length; i++) {
+                String[] subarr = arr[i].split(", ");
+                if (subarr.length != xlen) {
+                    result = "Make the array rectangular";
+                    balancedEquation.setText(result);
+                    return;
+                }
+                for (int j = 0; j < xlen; j++) {
+                    mainarr[i][j] = Double.parseDouble(subarr[j]);
                 }
             }
-        }
 
+            ComplexMatrix matrix = new ComplexMatrix(mainarr);
+            matrix = matrix.reducedRowEchelonForm();
+
+            for (int y = 0; y < ylen; y++) {
+                for (int x = 0; x < xlen; x++) {
+                    result += "" + matrix.getElementReference(x, y);
+                    result = result.substring(0, result.length() - 7) + "    ";
+                    if (x == xlen - 1) {
+                        result += "\n";
+                    }
+                }
+            }
+        } catch(Exception e) {
+            result += "Error";
+        }
 
         /*
         String[] loc = string.split(" = ");
